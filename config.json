@@ -34,12 +34,7 @@
     "telegram": {
         "enabled": true,
         "token": "",
-        "chat_id": "",
-        "notification_settings": {
-            "entry_fill": "off",
-            "exit_fill": "on",
-            "protection_trigger": "on"
-        }
+        "chat_id": ""
     },
     "exchange": {
         "name": "bybit",
