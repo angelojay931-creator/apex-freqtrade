@@ -6,5 +6,5 @@ COPY ./config.json /freqtrade/user_data/config.json
 # Copy the strategy file directly to the strategies directory
 COPY ./APEXStrategy.py /freqtrade/user_data/strategies/APEXStrategy.py
 
-# Run freqtrade
-CMD ["freqtrade", "trade", "--config", "/freqtrade/user_data/config.json", "--strategy", "APEXStrategy"]
+# Run freqtrade – ENTRYPOINT already includes "freqtrade"
+CMD ["trade", "--config", "/freqtrade/user_data/config.json", "--strategy", "APEXStrategy"]
