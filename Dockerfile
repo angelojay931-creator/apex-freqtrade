@@ -1,10 +1,10 @@
 FROM freqtradeorg/freqtrade:stable
 
-# Copy your config file (now named config.json)
+# Copy config.json (must exist at repo root)
 COPY ./config.json /freqtrade/user_data/config.json
 
-# Copy your strategy folder
-COPY ./strategies /freqtrade/user_data/strategies
+# Copy the strategy file directly to the strategies directory
+COPY ./APEXStrategy.py /freqtrade/user_data/strategies/APEXStrategy.py
 
-# Run freqtrade with the correct config
+# Run freqtrade
 CMD ["freqtrade", "trade", "--config", "/freqtrade/user_data/config.json", "--strategy", "APEXStrategy"]
