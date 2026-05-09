@@ -32,6 +32,7 @@
     },
     "custom_price_max_distance_ratio": 0.02,
     "telegram": {
+        "enabled": true,
         "token": "",
         "chat_id": ""
     },
