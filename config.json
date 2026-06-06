@@ -75,7 +75,12 @@
         "chat_id": "${TELEGRAM_CHAT_ID}"
     },
     "api_server": {
-        "enabled": false
+        "enabled": false,
+        "listen_ip_address": "127.0.0.1",
+        "listen_port": 8080,
+        "username": "freqtrade",
+        "password": "freqtrade",
+        "jwt_secret_key": "somethingRandomSomethingRandom123"
     },
     "bot_name": "APEX-Freqtrade",
     "initial_state": "running",
