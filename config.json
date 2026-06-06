@@ -1,6 +1,4 @@
 {
-    "trading_mode": "futures",
-    "margin_mode": "isolated",
     "max_open_trades": 6,
     "stake_currency": "USDT",
     "stake_amount": 300,
@@ -10,21 +8,17 @@
     "dry_run_wallet": 2000,
     "cancel_open_orders_on_exit": true,
     "exchange": {
-        "name": "bybit",
+        "name": "binance",
         "key": "",
         "secret": "",
         "ccxt_config": {
             "options": {
-                "defaultType": "swap",
-                "defaultSettle": "USDT",
-                "loadAllMarkets": false
+                "defaultType": "future"
             }
         },
         "ccxt_async_config": {
             "options": {
-                "defaultType": "swap",
-                "defaultSettle": "USDT",
-                "loadAllMarkets": false
+                "defaultType": "future"
             }
         },
         "pair_whitelist": [
@@ -132,8 +126,7 @@
         ],
         "pair_blacklist": [
             "BUSD/USDT:USDT"
-        ],
-        "markets_refresh_interval": 60
+        ]
     },
     "entry_pricing": {
         "price_side": "same",
@@ -187,5 +180,7 @@
     "force_entry_enable": false,
     "internals": {
         "process_throttle_secs": 5
-    }
+    },
+    "trading_mode": "futures",
+    "margin_mode": "isolated"
 }
