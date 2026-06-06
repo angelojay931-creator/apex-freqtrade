@@ -1,24 +1,30 @@
 {
+    "trading_mode": "futures",
+    "margin_mode": "isolated",
     "max_open_trades": 6,
     "stake_currency": "USDT",
-    "stake_amount": 300,
-    "tradable_balance_ratio": 0.99,
-    "fiat_display_currency": "USD",
+    "stake_amount": 100,
     "dry_run": true,
     "dry_run_wallet": 2000,
     "cancel_open_orders_on_exit": true,
+    "unfilledtimeout": {
+        "entry": 10,
+        "exit": 10
+    },
     "exchange": {
-        "name": "binance",
+        "name": "bybit",
         "key": "",
         "secret": "",
         "ccxt_config": {
             "options": {
-                "defaultType": "future"
+                "defaultType": "swap",
+                "defaultSettle": "USDT"
             }
         },
         "ccxt_async_config": {
             "options": {
-                "defaultType": "future"
+                "defaultType": "swap",
+                "defaultSettle": "USDT"
             }
         },
         "pair_whitelist": [
@@ -41,146 +47,40 @@
             "ZEC/USDT:USDT",
             "FIL/USDT:USDT",
             "AAVE/USDT:USDT",
-            "LTC/USDT:USDT",
-            "DYDX/USDT:USDT",
-            "STRK/USDT:USDT",
-            "PENDLE/USDT:USDT",
-            "IMX/USDT:USDT",
-            "PYTH/USDT:USDT",
-            "RUNE/USDT:USDT",
-            "WIF/USDT:USDT",
-            "KAVA/USDT:USDT",
-            "BLUR/USDT:USDT",
-            "ONT/USDT:USDT",
-            "CFX/USDT:USDT",
-            "IO/USDT:USDT",
-            "GMX/USDT:USDT",
-            "DASH/USDT:USDT",
-            "ONDO/USDT:USDT",
-            "LDO/USDT:USDT",
-            "SUSHI/USDT:USDT",
-            "TRX/USDT:USDT",
-            "ICP/USDT:USDT",
-            "ETC/USDT:USDT",
-            "TAO/USDT:USDT",
-            "HYPE/USDT:USDT",
-            "XMR/USDT:USDT",
-            "SHIB/USDT:USDT",
-            "BONK/USDT:USDT",
-            "TIA/USDT:USDT",
-            "SEI/USDT:USDT",
-            "GRT/USDT:USDT",
-            "MNT/USDT:USDT",
-            "RAY/USDT:USDT",
-            "FET/USDT:USDT",
-            "POL/USDT:USDT",
-            "RON/USDT:USDT",
-            "LUNA/USDT:USDT",
-            "IOTA/USDT:USDT",
-            "NEO/USDT:USDT",
-            "GALA/USDT:USDT",
-            "BAND/USDT:USDT",
-            "CKB/USDT:USDT",
-            "ZIL/USDT:USDT",
-            "VET/USDT:USDT",
-            "FLOKI/USDT:USDT",
-            "OCEAN/USDT:USDT",
-            "AGIX/USDT:USDT",
-            "ARKM/USDT:USDT",
-            "AKT/USDT:USDT",
-            "AXS/USDT:USDT",
-            "ROSE/USDT:USDT",
-            "KSM/USDT:USDT",
-            "COMP/USDT:USDT",
-            "YFI/USDT:USDT",
-            "W/USDT:USDT",
-            "NOT/USDT:USDT",
-            "ZK/USDT:USDT",
-            "TNSR/USDT:USDT",
-            "BCH/USDT:USDT",
-            "MKR/USDT:USDT",
-            "ALGO/USDT:USDT",
-            "THETA/USDT:USDT",
-            "EGLD/USDT:USDT",
-            "LRC/USDT:USDT",
-            "BAT/USDT:USDT",
-            "IOTX/USDT:USDT",
-            "STORJ/USDT:USDT",
-            "CELO/USDT:USDT",
-            "ONE/USDT:USDT",
-            "QTUM/USDT:USDT",
-            "ICX/USDT:USDT",
-            "ZETA/USDT:USDT",
-            "DUSK/USDT:USDT",
-            "AUDIO/USDT:USDT",
-            "ACH/USDT:USDT",
-            "XVS/USDT:USDT",
-            "ORN/USDT:USDT",
-            "LIT/USDT:USDT",
-            "SUPER/USDT:USDT",
-            "ATA/USDT:USDT",
-            "JOE/USDT:USDT",
-            "ENA/USDT:USDT",
-            "TON/USDT:USDT",
-            "JUP/USDT:USDT"
+            "LTC/USDT:USDT"
         ],
-        "pair_blacklist": [
-            "BUSD/USDT:USDT"
-        ]
+        "pair_blacklist": []
     },
     "entry_pricing": {
         "price_side": "same",
         "use_order_book": true,
-        "order_book_top": 1,
-        "check_depth_of_market": {
-            "enabled": false,
-            "bids_to_ask_delta": 1
-        }
+        "order_book_top": 1
     },
     "exit_pricing": {
         "price_side": "same",
         "use_order_book": true,
         "order_book_top": 1
     },
+    "pairlists": [
+        {
+            "method": "StaticPairList"
+        }
+    ],
     "leverage": {
         "default": 5
     },
     "telegram": {
         "enabled": true,
         "token": "${TELEGRAM_TOKEN}",
-        "chat_id": "${TELEGRAM_CHAT_ID}",
-        "notification_settings": {
-            "status": "on",
-            "warning": "on",
-            "startup": "on",
-            "entry": "on",
-            "entry_fill": "on",
-            "exit": "on",
-            "exit_fill": "on",
-            "exit_cancel": "on",
-            "protection_trigger": "on",
-            "protection_trigger_global": "on"
-        }
+        "chat_id": "${TELEGRAM_CHAT_ID}"
     },
     "api_server": {
-        "enabled": true,
-        "listen_ip_address": "0.0.0.0",
-        "listen_port": 8081,
-        "verbosity": "error",
-        "enable_openapi": false,
-        "jwt_secret_key": "apex-freqtrade-2026",
-        "CORS_origins": [
-            "*"
-        ],
-        "username": "apex",
-        "password": "apex2026"
+        "enabled": false
     },
-    "bot_name": "APEX-FreqTrade",
+    "bot_name": "APEX-Freqtrade",
     "initial_state": "running",
     "force_entry_enable": false,
     "internals": {
         "process_throttle_secs": 5
-    },
-    "trading_mode": "futures",
-    "margin_mode": "isolated"
+    }
 }
